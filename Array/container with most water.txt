@@ -1,0 +1,29 @@
+class Solution {
+    public int maxArea(int[] h) {
+
+        int l = 0;
+        int r = h.length - 1;
+
+        int ml = 0;
+
+        while(l < r){
+
+            int w = r - l;
+
+            int hi = Math.min(h[l], h[r]);
+
+            int a = hi * w;
+
+            ml = Math.max(ml, a);
+
+            if(h[l] < h[r]){
+                l++;
+            }
+            else{
+                r--;
+            }
+        }
+
+        return ml;
+    }
+}
